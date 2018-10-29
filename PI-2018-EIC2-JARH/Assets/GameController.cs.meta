@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 73a713fadaf10584397791f93e9cf1c9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Terrain: {fileID: 1783069116504662, guid: 005ffb5176881b044bc25e41efdb0656, type: 2}
+  - Player: {instanceID: 0}
+  - Camera: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
