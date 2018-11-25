@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         
-        player = Instantiate(player, new Vector3(0, 0, layer), player.transform.rotation); //instanciar o player
+        player = Instantiate(player, new Vector3(0, 1, layer), player.transform.rotation); //instanciar o player
         player.transform.localScale = new Vector3(0.5f, 0.5f, 1); //nao sei bem o que faz, cenas do hugo
         Camera.main.orthographicSize = 1; //para ter a camara centrada
         
@@ -43,9 +43,14 @@ public class PlayerController : MonoBehaviour {
         {
             atack();
             anim.Play("atack");
+        }else if (Input.GetKey("z"))
+        {
+            life = life - 10;
+            anim.Play("jump");
+            
         }
+
         
-     
         player.transform.position = newPosition;
         Vector3 newCameraPosition = Camera.main.transform.position;
         newCameraPosition.x = newPosition.x;
@@ -59,4 +64,8 @@ public class PlayerController : MonoBehaviour {
     {
         //bicho vai atacar
     }
+
+
+      //  player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+    
 }
