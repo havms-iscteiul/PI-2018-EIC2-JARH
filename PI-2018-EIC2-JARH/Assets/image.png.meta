@@ -1,63 +1,60 @@
 fileFormatVersion: 2
-guid: d3791262060e110418ab62ef52e63136
+guid: 082bf1f394184644fbaf305f885c5b11
 TextureImporter:
   fileIDToRecycleName:
-    21300000: personagem principal2_0
-    21300002: personagem principal2_1
-    21300004: personagem principal2_2
-    21300006: personagem principal2_3
-    21300008: personagem principal2_4
-    21300010: personagem principal2_5
-    21300012: personagem principal2_6
-    21300014: personagem principal2_7
-    21300016: personagem principal2_8
-    21300018: personagem principal2_9
-    21300020: personagem principal2_10
-    21300022: personagem principal2_11
-    21300024: personagem principal2_12
-    21300026: personagem principal2_13
-    21300028: personagem principal2_14
-    21300030: personagem principal2_15
-    21300032: personagem principal2_16
-    21300034: personagem principal2_17
-    21300036: personagem principal2_18
-    21300038: personagem principal2_19
-    21300040: personagem principal2_20
-    21300042: personagem principal2_21
-    21300044: personagem principal2_22
-    21300046: personagem principal2_23
-    21300048: personagem principal2_24
-    21300050: personagem principal2_25
-    21300052: personagem principal2_26
-    21300054: personagem principal2_27
-    21300056: personagem principal2_28
-    21300058: personagem principal2_29
-    21300060: personagem principal2_30
-    21300062: personagem principal2_31
-    21300064: personagem principal2_32
-    21300066: personagem principal2_33
-    21300068: personagem principal2_34
-    21300070: personagem principal2_35
-    21300072: personagem principal2_36
-    21300074: personagem principal2_37
-    21300076: personagem principal2_38
-    21300078: personagem principal2_39
-    21300080: personagem principal2_40
-    21300082: personagem principal2_41
-    21300084: personagem principal2_42
-    21300086: personagem principal2_43
-    21300088: personagem principal2_44
-    21300090: personagem principal2_45
-    21300092: personagem principal2_46
-    21300094: personagem principal2_47
-    21300096: personagem principal2_48
-    21300098: personagem principal2_49
-    21300100: personagem principal2_50
-    21300102: personagem principal2_51
-    21300104: personagem principal2_52
-    21300106: personagem principal2_53
-    21300108: personagem principal2_54
-    21300110: personagem principal2_55
+    21300000: image_0
+    21300002: image_1
+    21300004: image_2
+    21300006: image_3
+    21300008: image_4
+    21300010: image_5
+    21300012: image_6
+    21300014: image_7
+    21300016: image_8
+    21300018: image_9
+    21300020: image_10
+    21300022: image_11
+    21300024: image_12
+    21300026: image_13
+    21300028: image_14
+    21300030: image_15
+    21300032: image_16
+    21300034: image_17
+    21300036: image_18
+    21300038: image_19
+    21300040: image_20
+    21300042: image_21
+    21300044: image_22
+    21300046: image_23
+    21300048: image_24
+    21300050: image_25
+    21300052: image_26
+    21300054: image_27
+    21300056: image_28
+    21300058: image_29
+    21300060: image_30
+    21300062: image_31
+    21300064: image_32
+    21300066: image_33
+    21300068: image_34
+    21300070: image_35
+    21300072: image_36
+    21300074: image_37
+    21300076: image_38
+    21300078: image_39
+    21300080: image_40
+    21300082: image_41
+    21300084: image_42
+    21300086: image_43
+    21300088: image_44
+    21300090: image_45
+    21300092: image_46
+    21300094: image_47
+    21300096: image_48
+    21300098: image_49
+    21300100: image_50
+    21300102: image_51
+    21300104: image_52
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -140,7 +137,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: personagem principal2_0
+      name: image_0
       rect:
         serializedVersion: 2
         x: 12
@@ -154,13 +151,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89b9c3bdf3596e142a466ae3c466de61
+      spriteID: 0ee5abcd56d2b2c4db4f203acc88fc71
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_1
+      name: image_1
       rect:
         serializedVersion: 2
         x: 76
@@ -174,13 +171,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fb81f8f0ea95c1488da4b796b393219
+      spriteID: 0393ea7cde0ed2c4cac6b9836cd2a397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_2
+      name: image_2
       rect:
         serializedVersion: 2
         x: 140
@@ -194,13 +191,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3746cafd8177073489fbd2d1f6feff42
+      spriteID: d449e39deb7aa4843882a49722ecf70c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_3
+      name: image_3
       rect:
         serializedVersion: 2
         x: 204
@@ -214,13 +211,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef2a3b4f89a6b3949a2aa894d5369a54
+      spriteID: 89186f3b3b836f940867cea72cdb4e22
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_4
+      name: image_4
       rect:
         serializedVersion: 2
         x: 268
@@ -234,13 +231,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8e3777b1b2ba5e43bda02ac7ce81aad
+      spriteID: 2963f31b2463f3e438c9a763e272a19f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_5
+      name: image_5
       rect:
         serializedVersion: 2
         x: 332
@@ -254,13 +251,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 704ff83a97c2db741a4955d58c4c4642
+      spriteID: c820535ba5ebc854a823cd85e1078f87
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_6
+      name: image_6
       rect:
         serializedVersion: 2
         x: 396
@@ -274,13 +271,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da5484090c07b654c8cd60e309cdf3ed
+      spriteID: dd463c3cfcad35640a0085bf1d3d8a81
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_7
+      name: image_7
       rect:
         serializedVersion: 2
         x: 12
@@ -294,13 +291,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87b46c54cbe857644bb53bd8d6d83f6c
+      spriteID: 6c0fc7d931dd3e545b4f914f80305fc9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_8
+      name: image_8
       rect:
         serializedVersion: 2
         x: 76
@@ -314,13 +311,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89edd8b05da38e04a982cbe6db5575bd
+      spriteID: 5ae4d8b5144c61b4ba3f669494b41b22
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_9
+      name: image_9
       rect:
         serializedVersion: 2
         x: 140
@@ -334,13 +331,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 589af9bd05d0ae14793ba895a35653ce
+      spriteID: e32ab996434f1ea4fb14e412f64ff215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_10
+      name: image_10
       rect:
         serializedVersion: 2
         x: 204
@@ -354,13 +351,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b743dd50f3cb1545ac95f3ecaaecdf8
+      spriteID: cc0a8866bccb8e44c9db31ef9fa916eb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_11
+      name: image_11
       rect:
         serializedVersion: 2
         x: 268
@@ -374,13 +371,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 454f424db816dc84da7601276ae5a783
+      spriteID: 05b7607e997edce4291bea8eebfa8544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_12
+      name: image_12
       rect:
         serializedVersion: 2
         x: 332
@@ -394,13 +391,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0ea0fe0ed6a84247a4574cbb1f819cb
+      spriteID: 7d43aa5cef237ea458ecd4067d8eb77e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_13
+      name: image_13
       rect:
         serializedVersion: 2
         x: 396
@@ -414,13 +411,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21a96f8251863bd47b8a8be2ef88149b
+      spriteID: ed3960b4c2d49804fb2b099d32e99a15
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_14
+      name: image_14
       rect:
         serializedVersion: 2
         x: 12
@@ -434,13 +431,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a38ecca167f805e468152439b4a13683
+      spriteID: 28aa0d6601d412d40a6d45dd247aa2a4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_15
+      name: image_15
       rect:
         serializedVersion: 2
         x: 76
@@ -454,13 +451,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52a234ad67c0abc44b818a761591eaa8
+      spriteID: 45529ac92e6151243a53a01ab9e87780
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_16
+      name: image_16
       rect:
         serializedVersion: 2
         x: 140
@@ -474,13 +471,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eebbb24838a82fc469ae8151ca309e59
+      spriteID: f1b1392ef5155ac438f1635cd5447894
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_17
+      name: image_17
       rect:
         serializedVersion: 2
         x: 204
@@ -494,13 +491,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b78ab7d78c72de4f92f5c23a518ef68
+      spriteID: 86af4aad9f0d70b4fabfe56edaf670c3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_18
+      name: image_18
       rect:
         serializedVersion: 2
         x: 268
@@ -514,13 +511,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52829b413ca39ee49a08dc021aba9eeb
+      spriteID: 80db1d041931dbd4e99cb5914bb53c7e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_19
+      name: image_19
       rect:
         serializedVersion: 2
         x: 332
@@ -534,13 +531,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6057fc19391a2d14db966d3fb176c7b2
+      spriteID: 6a9aa2b81fdf61541be6a689dd968f9c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_20
+      name: image_20
       rect:
         serializedVersion: 2
         x: 396
@@ -554,13 +551,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21d5936af18e5d34ea825878c2838225
+      spriteID: e88d4c52f1fe76c4f9717c14d1880a71
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_21
+      name: image_21
       rect:
         serializedVersion: 2
         x: 12
@@ -574,13 +571,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbe78dff15b425e429dac1ac3d278b62
+      spriteID: d53b8a1e088c7b044b4886806342511b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_22
+      name: image_22
       rect:
         serializedVersion: 2
         x: 76
@@ -594,13 +591,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60083cf373890dc48bbbeb6bca6a2983
+      spriteID: 259437a3e88dd3b4ca4dfddf1ca45310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_23
+      name: image_23
       rect:
         serializedVersion: 2
         x: 140
@@ -614,13 +611,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f75edd91f79fc2f458b8beb58c56f871
+      spriteID: 2ef7413d6a56e814facb1592902598ab
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_24
+      name: image_24
       rect:
         serializedVersion: 2
         x: 204
@@ -634,13 +631,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7330b38438b3b64449d77bb50d210617
+      spriteID: db8f5dbcba321924e8343757494ec0c1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_25
+      name: image_25
       rect:
         serializedVersion: 2
         x: 268
@@ -654,13 +651,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8378cad8443cf6648bf7816ae01ebdd6
+      spriteID: 56af7dda124e4dc4b932ee1eee2a6194
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_26
+      name: image_26
       rect:
         serializedVersion: 2
         x: 332
@@ -674,13 +671,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ff699c20fc3b144f956c5f93edb6574
+      spriteID: bf677787613788942991b657c82a7f40
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_27
+      name: image_27
       rect:
         serializedVersion: 2
         x: 396
@@ -694,13 +691,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aab3a97fe72c85a469dbc9e29669b680
+      spriteID: 3e51c81f44af11c43bb342c075232fcd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_28
+      name: image_28
       rect:
         serializedVersion: 2
         x: 12
@@ -714,13 +711,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19d7a031de9c1cb4a9471eb0d4771486
+      spriteID: 3a472bb2babeac74d970db5b01d57175
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_29
+      name: image_29
       rect:
         serializedVersion: 2
         x: 76
@@ -734,13 +731,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3fc93e45f1c8204cb9c58e120dfe17c
+      spriteID: 3eb403444c9ec42498a22a192e92adbb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_30
+      name: image_30
       rect:
         serializedVersion: 2
         x: 140
@@ -754,13 +751,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b24d630d5f916048b7405034706c403
+      spriteID: e36036f7b316dfe4aae097805b14db3c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_31
+      name: image_31
       rect:
         serializedVersion: 2
         x: 204
@@ -774,13 +771,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69108e8e0eae5a74e884bf557631a369
+      spriteID: d59a1fd1d28170d4694e2a7cdb69b889
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_32
+      name: image_32
       rect:
         serializedVersion: 2
         x: 268
@@ -794,13 +791,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a30adc57bc58e649bc88c92df856767
+      spriteID: 26279f1864d3649418539f49f2eacf99
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_33
+      name: image_33
       rect:
         serializedVersion: 2
         x: 332
@@ -814,33 +811,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1fd865743321f94a8e79ed5b9eeb064
+      spriteID: e8478a47aa798694199301ce609b9009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_34
-      rect:
-        serializedVersion: 2
-        x: 396
-        y: 230
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eaa8df9750ec8d44c9d83db9ae852385
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: personagem principal2_35
+      name: image_34
       rect:
         serializedVersion: 2
         x: 12
@@ -854,13 +831,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b42880cb4d5d49a45bd242a4e6826841
+      spriteID: 234e961f959e47646a85f5349e46b4db
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_36
+      name: image_35
       rect:
         serializedVersion: 2
         x: 76
@@ -874,13 +851,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc9bcc34099eca249bb9ef62eeb58fd9
+      spriteID: 2e252ae80855af146a4cac6b01bcca72
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_37
+      name: image_36
       rect:
         serializedVersion: 2
         x: 140
@@ -894,13 +871,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54e9b6a24edd74547b42a15a045a049c
+      spriteID: f09701bff3d28224e8fde85cd34df0fb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_38
+      name: image_37
       rect:
         serializedVersion: 2
         x: 204
@@ -914,13 +891,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55db753eb295f994194aa764bfdafe95
+      spriteID: 9f5d1dc1f9be969448d7890a88936062
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_39
+      name: image_38
       rect:
         serializedVersion: 2
         x: 268
@@ -934,13 +911,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98c106088a04aff46b46e995d6dac930
+      spriteID: 7f972a1e5128d1e44b84ad50eafbd1b7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_40
+      name: image_39
       rect:
         serializedVersion: 2
         x: 332
@@ -954,33 +931,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aeff7b3b993267d4c9e09a722b7ebf82
+      spriteID: ed92b3355aa2546478cb9a616d585dbb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_41
-      rect:
-        serializedVersion: 2
-        x: 396
-        y: 166
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 680adcbca862c654bbe5b03dd0ec8092
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: personagem principal2_42
+      name: image_40
       rect:
         serializedVersion: 2
         x: 12
@@ -994,13 +951,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 750e39a81bb9aa74392712086c7e9b2c
+      spriteID: 477333b5942aa7e4d96dc4101304a091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_43
+      name: image_41
       rect:
         serializedVersion: 2
         x: 76
@@ -1014,13 +971,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5dab0d56c444be04f8f34dd556474347
+      spriteID: ce3a427f0a9b2be48b3b3dd21a525451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_44
+      name: image_42
       rect:
         serializedVersion: 2
         x: 140
@@ -1034,13 +991,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9f4f00b86cc5cc44abab24afd771374
+      spriteID: e027d9c3d0a81a74ab8443e6f666c65a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_45
+      name: image_43
       rect:
         serializedVersion: 2
         x: 204
@@ -1054,13 +1011,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e1cce2297677764da9e22421e848fd8
+      spriteID: f3b82b9933ef79a4693ddb43cc0f4031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_46
+      name: image_44
       rect:
         serializedVersion: 2
         x: 268
@@ -1074,13 +1031,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccffe4f43636df2498625255eba69db6
+      spriteID: 3825586d7ec97be4da9d41b61011db7d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_47
+      name: image_45
       rect:
         serializedVersion: 2
         x: 332
@@ -1094,33 +1051,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ae2e4a4578a1b44da523be44b309cc9
+      spriteID: 9b678a6c0b0298c41bc1b518f9e2ef4d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_48
-      rect:
-        serializedVersion: 2
-        x: 396
-        y: 102
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43c29f7d2c5c9b442a7c82a551087b26
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: personagem principal2_49
+      name: image_46
       rect:
         serializedVersion: 2
         x: 12
@@ -1134,13 +1071,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5326b31f162d1404c94849ceb580507a
+      spriteID: 43598f46fc4958547ac261621c3bc559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_50
+      name: image_47
       rect:
         serializedVersion: 2
         x: 76
@@ -1154,13 +1091,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e600bf60d99550f4b897bddda728311e
+      spriteID: c009040399b298a40924f94fb8f2497d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_51
+      name: image_48
       rect:
         serializedVersion: 2
         x: 140
@@ -1174,13 +1111,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e36d5527bcb91364caa9ce6ac533e1f7
+      spriteID: 0a7e34580d1e3634cbba0bae5df646e5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_52
+      name: image_49
       rect:
         serializedVersion: 2
         x: 204
@@ -1194,13 +1131,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00126c1b1d0f07e408c878ca7bb6db39
+      spriteID: 3888af276ad1d154bb3214bed107a627
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_53
+      name: image_50
       rect:
         serializedVersion: 2
         x: 268
@@ -1214,13 +1151,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28cb098c621475347a45a7e4aa804c62
+      spriteID: 3cad0a47265f6d94e9152ab79eeb693e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_54
+      name: image_51
       rect:
         serializedVersion: 2
         x: 332
@@ -1234,13 +1171,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 488cd8c9ceef96b48875ded66935c67c
+      spriteID: 4f2db06a8a0329745acbac4f68d458c3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: personagem principal2_55
+      name: image_52
       rect:
         serializedVersion: 2
         x: 396
@@ -1254,7 +1191,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a80611afb155644aac55ecc3a0c7a5b
+      spriteID: e0476fa2c4647764da8aa129ec96c844
       vertices: []
       indices: 
       edges: []
@@ -1262,7 +1199,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e0787160283da9446bcbe86b5408b8d6
+    spriteID: 0c0f853a0a1e945429f223f4a6e76b07
     vertices: []
     indices: 
     edges: []
