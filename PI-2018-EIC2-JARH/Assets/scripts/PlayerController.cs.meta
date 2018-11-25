@@ -4,10 +4,12 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - player: {fileID: 1031849219593812, guid: cf48b27bea544554e8aff83dda49e14c, type: 2}
-  - right: {fileID: 21300042, guid: d3791262060e110418ab62ef52e63136, type: 3}
-  - left: {fileID: 21300014, guid: d3791262060e110418ab62ef52e63136, type: 3}
-  - spriteRenderer: {instanceID: 0}
+  - player: {fileID: 1901598719655120, guid: ce37deb9edcc7f04ab773cea2c9145ac, type: 2}
+  - move: {fileID: 21300000, guid: 78b491137cc98d94998af87e62cde557, type: 3}
+  - standby: {fileID: 21300000, guid: 9f69a0547e9ad524f8556f369c6d8361, type: 3}
+  - atackSprite: {fileID: 21300000, guid: 34646f483177458498b099d03e07bf02, type: 3}
+  - atackClip: {fileID: 7400000, guid: 3d6f9312027ba6c45be7cfc3f0b73631, type: 2}
+  - stand: {fileID: 7400000, guid: bf5f722c7a4be1b479b100a0e0647e5b, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
