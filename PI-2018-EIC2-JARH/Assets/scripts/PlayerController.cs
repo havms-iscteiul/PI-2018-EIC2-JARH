@@ -6,12 +6,12 @@ public class PlayerController : MonoBehaviour {
     public GameObject player;
     private const float Speed = 0.01f;
     private static int layer = 1; 
-    public Sprite right; 
-    public Sprite left;
+ 
+
+    public Animator anim;
+
 
     public int life = 100; 
-
-    public SpriteRenderer spriteRenderer;
 
     // Use this for initialization
     void Start () {
@@ -19,12 +19,9 @@ public class PlayerController : MonoBehaviour {
         player = Instantiate(player, new Vector3(0, 0, layer), player.transform.rotation); //instanciar o player
         player.transform.localScale = new Vector3(0.5f, 0.5f, 1); //nao sei bem o que faz, cenas do hugo
         Camera.main.orthographicSize = 1; //para ter a camara centrada
-
-        spriteRenderer = player.AddComponent<SpriteRenderer>();
-        //sprites
-        //spriteRenderer = GetComponent<SpriteRenderer>(); // we are accessing the SpriteRenderer that is attached to the Gameobject
-        if (spriteRenderer.sprite == null) // if the sprite on spriteRenderer is null then
-            spriteRenderer.sprite = right; // meter o bicho virado para a esquerda
+        
+        anim= player.GetComponent<Animator>();
+       
     }
 	
 	// Update is called once per frame
@@ -33,13 +30,21 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             newPosition.x -= Speed;
-            spriteRenderer.sprite = left;
+            anim.Play("move");
+            player.GetComponent<SpriteRenderer>().flipX = false;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             newPosition.x += Speed;
-            spriteRenderer.sprite = right;
+            anim.Play("move");
+            player.GetComponent<SpriteRenderer>().flipX = true;
         }
+        else if (Input.GetKey("x"))
+        {
+            atack();
+            anim.Play("atack");
+        }
+        
      
         player.transform.position = newPosition;
         Vector3 newCameraPosition = Camera.main.transform.position;
@@ -50,5 +55,8 @@ public class PlayerController : MonoBehaviour {
 
 
 
-
+    public void atack()
+    {
+        //bicho vai atacar
+    }
 }
