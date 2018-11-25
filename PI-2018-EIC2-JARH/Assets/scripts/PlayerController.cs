@@ -40,10 +40,15 @@ public class PlayerController : MonoBehaviour {
             newPosition.x += Speed;
             spriteRenderer.sprite = right;
         }
+     
         player.transform.position = newPosition;
         Vector3 newCameraPosition = Camera.main.transform.position;
         newCameraPosition.x = newPosition.x;
         newCameraPosition.y = newPosition.y;
         Camera.main.transform.position = newCameraPosition;
     }
+
+
+
+
 }
