@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -39,12 +40,27 @@ public class Fight : MonoBehaviour {
         //calculo do tempo entre cada inimigo
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            //MathNet.Numerics.Distributions.ContinuousUniform.Sample()
+            double timeToNextEnemy = cosine(3, 10);
         }
         //calculo da vida perdida do jogador
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            double lostLife = LogNormal.Sample(0.5,0.8);
+            double lostLife = logarithmic(0, 1);
         }
     }
+
+    double cosine(double xMin, double xMax)
+    {
+        double a = 0.5 * (xMin + xMax); // location parameter
+        double b = (xMax - xMin) / Math.PI; // scale parameter
+        return a + b * Math.Asin(ContinuousUniform.Sample(-1, 1));
+    }
+
+    private double logarithmic(double xMin, double xMax)
+    {
+        double a = 0.5 * (xMin + xMax); // location parameter
+        double b = xMax - xMin; // scale parameter 
+        return a + b * ContinuousUniform.Sample(0, 1) * ContinuousUniform.Sample(0, 1);
+    }
+
 }

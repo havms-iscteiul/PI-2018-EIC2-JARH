@@ -7,6 +7,8 @@ using MathNet.Numerics.Distributions;
 public class GenerateRandoms : MonoBehaviour {
 
     private Cenarios cenarioSelecionado;
+
+    private GameObject plataform;
     
     // Use this for initialization
     void Start () {
@@ -15,7 +17,6 @@ public class GenerateRandoms : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
     }
 
     public enum Cenarios
