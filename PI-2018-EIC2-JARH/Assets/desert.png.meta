@@ -11,7 +11,7 @@ TextureImporter:
     21300012: desert_6
     21300014: desert_7
     21300016: desert_8
-    21300018: desert_9
+    21300018: caminho
     21300020: desert_10
     21300022: desert_11
     21300024: desert_12
@@ -211,26 +211,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caminho
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 321
-        width: 62
-        height: 63
-      alignment: 9
-      pivot: {x: 0.4028537, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a73a7c34997b41945a7fdf0b1ba9aa89
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: desert_4
       rect:
         serializedVersion: 2
@@ -331,7 +311,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: desert_9
+      name: caminho
       rect:
         serializedVersion: 2
         x: 96
