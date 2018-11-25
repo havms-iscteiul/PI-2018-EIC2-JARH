@@ -4,9 +4,10 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - Player: {fileID: 1031849219593812, guid: cf48b27bea544554e8aff83dda49e14c, type: 2}
+  - player: {fileID: 1031849219593812, guid: cf48b27bea544554e8aff83dda49e14c, type: 2}
   - right: {fileID: 21300042, guid: d3791262060e110418ab62ef52e63136, type: 3}
   - left: {fileID: 21300014, guid: d3791262060e110418ab62ef52e63136, type: 3}
+  - spriteRenderer: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
