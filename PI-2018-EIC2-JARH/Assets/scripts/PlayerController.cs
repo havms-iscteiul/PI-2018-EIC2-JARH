@@ -5,23 +5,40 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     public GameObject player;
     private const float Speed = 0.01f;
-    private static int layer = 1; 
- 
+    private static int layer = 1;
+
+    [SerializeField] private HealthBar healthBar;
 
     public Animator anim;
 
-
-    public int life = 100; 
+    private const int maxLife = 100;
+    public int Life
+    {
+        get
+        {
+            return life;
+        }
+        set
+        {
+            if (value >= 0 && value <= 100)
+            {
+                life = value;
+                healthBar.SetSize(life, maxLife);
+            }
+        }
+    }
+    private int life; 
 
     // Use this for initialization
-    void Start () {
-        
+    private void Start () {
         player = Instantiate(player, new Vector3(0, 1, layer), player.transform.rotation); //instanciar o player
         player.transform.localScale = new Vector3(0.5f, 0.5f, 1); //nao sei bem o que faz, cenas do hugo
         Camera.main.orthographicSize = 1; //para ter a camara centrada
         
         anim= player.GetComponent<Animator>();
-       
+
+        //cenas da vida ;)
+        Life = maxLife;        
     }
 	
 	// Update is called once per frame
@@ -43,19 +60,26 @@ public class PlayerController : MonoBehaviour {
         {
             atack();
             anim.Play("atack");
-        }else if (Input.GetKey("z"))
+            Life += 1;
+        }
+        else if (Input.GetKey("z"))
         {
-            life = life - 10;
+            Life -= 1;
             anim.Play("jump");
             
         }
-
         
         player.transform.position = newPosition;
         Vector3 newCameraPosition = Camera.main.transform.position;
         newCameraPosition.x = newPosition.x;
         newCameraPosition.y = newPosition.y;
         Camera.main.transform.position = newCameraPosition;
+        
+        Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height, 1));
+        Vector3 newHealthBarPosition = healthBar.transform.position;
+        newHealthBarPosition.x = worldPos.x + healthBar.transform.localScale.x + 0.1f;
+        newHealthBarPosition.y = worldPos.y - healthBar.transform.localScale.y + 0.1f;
+        healthBar.transform.position = newHealthBarPosition;
     }
 
 

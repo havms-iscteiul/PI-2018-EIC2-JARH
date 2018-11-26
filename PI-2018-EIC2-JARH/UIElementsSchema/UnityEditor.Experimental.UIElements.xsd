@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:engine="UnityEngine.Experimental.UIElements" xmlns:editor="UnityEditor.Experimental.UIElements" elementFormDefault="qualified" targetNamespace="UnityEditor.Experimental.UIElements" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:editor="UnityEditor.Experimental.UIElements" xmlns:engine="UnityEngine.Experimental.UIElements" xmlns="UnityEditor.PackageManager.UI" elementFormDefault="qualified" targetNamespace="UnityEditor.Experimental.UIElements" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="UnityEngine.Experimental.UIElements.xsd" namespace="UnityEngine.Experimental.UIElements" />
   <xs:complexType name="FloatFieldType">
     <xs:complexContent mixed="false">
@@ -94,7 +94,7 @@
         <xs:attribute default="" name="name" type="xs:string" use="optional" />
         <xs:attribute default="Position" name="pickingMode" type="engine:VisualElement_pickingMode_Type" use="optional" />
         <xs:attribute default="0" name="focusIndex" type="xs:int" use="optional" />
-        <xs:attribute default="RGBA(0.000, 0.000, 0.000, 1.000)" name="value" type="xs:string" use="optional" />
+        <xs:attribute default="RGBA(0,000, 0,000, 0,000, 1,000)" name="value" type="xs:string" use="optional" />
         <xs:attribute default="true" name="showEyeDropper" type="xs:boolean" use="optional" />
         <xs:attribute default="true" name="showAlpha" type="xs:boolean" use="optional" />
         <xs:attribute default="false" name="hdr" type="xs:boolean" use="optional" />
