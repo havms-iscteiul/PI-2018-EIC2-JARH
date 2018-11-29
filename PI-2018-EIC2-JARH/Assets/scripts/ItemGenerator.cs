@@ -7,14 +7,15 @@ using MathNet.Numerics.Distributions;
 public class ItemGenerator : MonoBehaviour {
 
     public GameObject item;
-    public GameObject healthbar;
+    public HealthBar healthbar;
     double timeToNextItem;
+
 
 
 
     // Use this for initialization
     void Start () {
-        timeToNextItem = cosine(3, 10);
+        timeToNextItem = cosine(7, 11);
 
         //Instantiate(item, transform.position, transform.rotation);
     }
@@ -24,29 +25,39 @@ public class ItemGenerator : MonoBehaviour {
         timeToNextItem -= Time.deltaTime;
         if (timeToNextItem < 0)
         {
-            timeToNextItem= cosine(3, 10);
+            timeToNextItem= cosine(7, 11);
             double[] probs = new double[4];
             probs[0] = 0.4;
             probs[1] = 0.3;
             probs[2] = 0.2;
             probs[3] = 0.1;
             int typeOfItem = Categorical.Sample(probs);
-            transform.position = new Vector3(4, transform.position.y, transform.position.z);
+            Camera cam = Camera.main;
+            float height = 2f * cam.orthographicSize;
+            float width = height * cam.aspect;
+            
+            item.transform.position=new Vector3(cam.transform.position.x+4, transform.position.y, transform.position.z);
+
             if (typeOfItem == 0)
             {
                 item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/potion_1");
+               // healthbar.SetSize(2, 3);
             }
             if (typeOfItem == 1)
             {
+               
                 item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/pill");
+               // healthbar.SetSize(2, 3);
             }
             if (typeOfItem == 2)
             {
                 item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/pills");
+               // healthbar.SetSize(2, 3);
             }
             if (typeOfItem == 3)
             {
                 item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/backpack-1");
+                //healthbar.SetSize(2, 3);
             }
         }
     }
