@@ -15,6 +15,7 @@ public class ItemGenerator : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        item.SetActive(false);
         timeToNextItem = cosine(7, 11);
 
         //Instantiate(item, transform.position, transform.rotation);
@@ -35,7 +36,7 @@ public class ItemGenerator : MonoBehaviour {
             Camera cam = Camera.main;
             float height = 2f * cam.orthographicSize;
             float width = height * cam.aspect;
-            
+            item.SetActive(true);
             item.transform.position=new Vector3(cam.transform.position.x+4, transform.position.y, transform.position.z);
 
             if (typeOfItem == 0)
