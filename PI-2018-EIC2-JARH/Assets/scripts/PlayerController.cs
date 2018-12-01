@@ -1,9 +1,16 @@
-﻿using System.Collections;
+﻿using MathNet.Numerics.Distributions;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     public GameObject player;
+    public GameObject monster;
+    public GameObject background;
+
+
+
     private const float Speed = 0.01f;
     private static int layer = 1;
 
@@ -38,7 +45,8 @@ public class PlayerController : MonoBehaviour {
         anim= player.GetComponent<Animator>();
 
         //cenas da vida ;)
-        Life = maxLife;        
+        Life = maxLife;
+
     }
 	
 	// Update is called once per frame
@@ -65,7 +73,7 @@ public class PlayerController : MonoBehaviour {
         else if (Input.GetKey("z"))
         {
             Life -= 1;
-            anim.Play("jump");
+           // anim.Play("jump");
             
         }
         
@@ -80,6 +88,10 @@ public class PlayerController : MonoBehaviour {
         newHealthBarPosition.x = worldPos.x + healthBar.transform.localScale.x + 0.1f;
         newHealthBarPosition.y = worldPos.y - healthBar.transform.localScale.y + 0.1f;
         healthBar.transform.position = newHealthBarPosition;
+
+        //generate monstro
+       
+
     }
 
 
@@ -90,6 +102,11 @@ public class PlayerController : MonoBehaviour {
     }
 
 
-      //  player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
-    
+    //  player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+    double cosine(double xMin, double xMax)
+    {
+        double a = 0.5 * (xMin + xMax); // location parameter
+        double b = (xMax - xMin) / Math.PI; // scale parameter
+        return a + b * Math.Asin(ContinuousUniform.Sample(-1, 1));
+    }
 }

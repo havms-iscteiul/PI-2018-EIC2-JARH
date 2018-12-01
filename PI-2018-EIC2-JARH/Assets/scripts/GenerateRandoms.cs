@@ -6,7 +6,7 @@ using MathNet.Numerics.Distributions;
 
 public class GenerateRandoms : MonoBehaviour {
 
-    private Cenarios cenarioSelecionado;
+    public static Cenarios cenarioSelecionado = (Cenarios)System.Enum.GetValues(typeof(Cenarios)).GetValue(DiscreteUniform.Sample(0, 3));
 
     public GameObject bg;
     public GameObject tille;
@@ -17,7 +17,6 @@ public class GenerateRandoms : MonoBehaviour {
     
     // Use this for initialization
     void Start () {
-        cenarioSelecionado = (Cenarios)System.Enum.GetValues(typeof(Cenarios)).GetValue(DiscreteUniform.Sample(0, 3));
         if(cenarioSelecionado==Cenarios.Deserto){
             bg.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Backgrounds/Deserto");
             tille.GetComponent<SpriteRenderer>().sprite = deserto;

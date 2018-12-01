@@ -17,7 +17,9 @@ public class Collision : MonoBehaviour {
     {
         if (collision.collider.tag == "Item")
         {
-            collision.gameObject.SetActive(false);
+         //   collision.gameObject.SetActive(false);
+            Debug.Log("pumb");
         }
+       
     }
 }
