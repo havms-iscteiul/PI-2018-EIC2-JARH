@@ -7,13 +7,13 @@ using TMPro;
 public class Score_Time : MonoBehaviour {
 
     int score = 0;
-    int time = 0;
-    public float timeLeft = 0.0f;
+    public float time = 0.0f;
    
-    
 
     public TextMeshProUGUI scoret;
     public TextMeshProUGUI Timet;
+    private int highscore;
+    private float recordTime;
     
 
     public bool check = false;
@@ -36,13 +36,14 @@ public class Score_Time : MonoBehaviour {
         if (check1 == false)
         {
             StartCoroutine(Time_delay());
-            int min = Mathf.FloorToInt(timeLeft / 60);
-            int sec = Mathf.FloorToInt(timeLeft % 60);
+            int min = Mathf.FloorToInt(time / 60);
+            int sec = Mathf.FloorToInt(time % 60);
             Timet.text = min.ToString("00") + ":" + sec.ToString("00");
             //Timet.text = "Time:" + time;
 
         }
     }
+
 
     IEnumerator Score_delay()
     {
@@ -55,9 +56,19 @@ public class Score_Time : MonoBehaviour {
     IEnumerator Time_delay()
     {
         check1 = true;
-        timeLeft = timeLeft + 1;
-        //time = time + 1;
+        time = time + 1;
         yield return new WaitForSeconds(1F);
         check1 = false;
+    }
+
+    public void updateHighscores()
+    {
+        if(time >recordTime)
+        {
+            recordTime = time;
+            highscore = score;
+            PlayerPrefs.SetInt("HighScore", highscore);
+            PlayerPrefs.SetFloat("RecordTime", recordTime);
+        }
     }
 }

@@ -6,7 +6,7 @@ public class HealthBar : MonoBehaviour {
 
     private Transform helthbar;
     private TextMesh healthText;
-    private int life=30;
+    private int life=100;
     private int maxLife=100;
     
 
