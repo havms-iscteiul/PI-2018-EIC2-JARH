@@ -7,7 +7,6 @@ using MathNet.Numerics.Distributions;
 public class ItemGenerator : MonoBehaviour {
 
     public GameObject item;
-    public HealthBar healthbar;
     double timeToNextItem;
 
 
@@ -38,27 +37,24 @@ public class ItemGenerator : MonoBehaviour {
             float width = height * cam.aspect;
             item.SetActive(true);
             item.transform.position=new Vector3(cam.transform.position.x+4, transform.position.y, transform.position.z);
-
+    
             if (typeOfItem == 0)
             {
-                item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/potion_1");
-               // healthbar.SetSize(2, 3);
+                item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/potion");
+              
             }
             if (typeOfItem == 1)
             {
                
                 item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/pill");
-               // healthbar.SetSize(2, 3);
             }
             if (typeOfItem == 2)
             {
-                item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/pills");
-               // healthbar.SetSize(2, 3);
+                item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/medicine");
             }
             if (typeOfItem == 3)
             {
-                item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/backpack-1");
-                //healthbar.SetSize(2, 3);
+                item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/backpack");
             }
         }
     }
