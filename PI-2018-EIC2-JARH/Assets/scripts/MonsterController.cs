@@ -12,6 +12,7 @@ public class MonsterController : MonoBehaviour {
     public String typeOfScenario;
     GenerateRandoms.Cenarios cenario;
 
+  
 
     // Use this for initialization
     void Start () {
@@ -146,13 +147,8 @@ public class MonsterController : MonoBehaviour {
 
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.tag == "Magic")
-        {
-            Destroy(gameObject);
-        }
-    }
+   
+   
 
     double cosine(double xMin, double xMax)
     {
