@@ -5,10 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController2 : MonoBehaviour {
     public HealthBar healthbar;
-     private const float Speed = 0.01f;
+     private const float Speed = 0.05f;
    private Animator anim;
     private static int layer = 1;
     public Score_Time score_time;
+
+    public GameObject magicL;
+    public GameObject magicR;
+    public Vector2 magicPos;
+    public float magicRate = 0.5f;
+    public float nextMagic = 0.0f;
+
 
     // Use this for initialization
     void Start () {
@@ -39,8 +46,9 @@ public class PlayerController2 : MonoBehaviour {
             anim.Play("move");
             GetComponent<SpriteRenderer>().flipX = true;
         }
-        else if (Input.GetKey("x"))
+        else if (Input.GetKey("x") && Time.time > nextMagic)
         {
+            nextMagic = Time.time + magicRate;
             atack();
             anim.Play("atack");
            // Life += 1;
@@ -69,6 +77,17 @@ public class PlayerController2 : MonoBehaviour {
 
     public void atack()
     {
+        magicPos = transform.position;
+        if (GetComponent<SpriteRenderer>().flipX)
+        {
+            magicPos += new Vector2(+0.45f, -0.2f);
+            Instantiate(magicR, magicPos, Quaternion.identity);
+        }
+        else
+        {
+            magicPos += new Vector2(-0.45f, -0.2f);
+            Instantiate(magicL, magicPos, Quaternion.identity);
+        }
         //bicho vai atacar
     }
     public void OnCollisionEnter2D(Collision2D collision)
@@ -117,7 +136,7 @@ public class PlayerController2 : MonoBehaviour {
         }
         if (collision.collider.tag == "monster")
         {
-            int newLife = healthbar.getLife() -100;
+            int newLife = healthbar.getLife() -10;
             healthbar.SetSize(newLife, 100);
         }
 

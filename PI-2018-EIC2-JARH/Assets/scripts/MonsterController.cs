@@ -145,6 +145,15 @@ public class MonsterController : MonoBehaviour {
         }
 
     }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Magic")
+        {
+            Destroy(gameObject);
+        }
+    }
+
     double cosine(double xMin, double xMax)
     {
         double a = 0.5 * (xMin + xMax); // location parameter
