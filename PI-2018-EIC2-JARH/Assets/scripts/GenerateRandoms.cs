@@ -6,7 +6,17 @@ using MathNet.Numerics.Distributions;
 
 public class GenerateRandoms : MonoBehaviour {
 
-    public static Cenarios cenarioSelecionado = (Cenarios)System.Enum.GetValues(typeof(Cenarios)).GetValue(DiscreteUniform.Sample(0, 3));
+
+    public enum Cenarios
+    {
+        Deserto = 1,
+        Floresta = 2,
+        Gelado = 3,
+        Noturno = 4
+    }
+
+    public static Cenarios cenarioSelecionado = 
+        (Cenarios)System.Enum.GetValues(typeof(Cenarios)).GetValue(DiscreteUniform.Sample(0, 3));
 
     public GameObject bg;
     public GameObject tille;
@@ -39,11 +49,5 @@ public class GenerateRandoms : MonoBehaviour {
 	void Update () {
     }
 
-    public enum Cenarios
-    {
-        Deserto = 1,
-        Floresta = 2,
-        Gelado = 3,
-        Noturno = 4
-    }
+
 }

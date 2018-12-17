@@ -38,7 +38,7 @@ public class Score_Time : MonoBehaviour {
             StartCoroutine(Time_delay());
             int min = Mathf.FloorToInt(time / 60);
             int sec = Mathf.FloorToInt(time % 60);
-            Timet.text = min.ToString("00") + ":" + sec.ToString("00");
+            Timet.text = "Time:" + min.ToString("00") + ":" + sec.ToString("00");
             //Timet.text = "Time:" + time;
 
         }

@@ -21,7 +21,7 @@ public class PlayerController2 : MonoBehaviour {
     void Start () {
         //player = Instantiate(player, new Vector3(0, 1, layer), player.transform.rotation); //instanciar o player
        // player.transform.localScale = new Vector3(0.5f, 0.5f, 1); //nao sei bem o que faz, cenas do hugo
-        Camera.main.orthographicSize = 1; //para ter a camara centrada
+        Camera.main.orthographicSize = 2; //para ter a camara centrada
 
         anim = GetComponent<Animator>();
     }
