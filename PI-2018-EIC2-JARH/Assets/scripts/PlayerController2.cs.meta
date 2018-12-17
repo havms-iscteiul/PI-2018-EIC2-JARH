@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 98c0a7f2b4eebd342af449fc6be645df
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - healthbar: {instanceID: 0}
+  - score_time: {instanceID: 0}
+  - magicL: {fileID: 1956949089517286, guid: 6b49bf34b3ef191449b44cd7c9b7c04c, type: 2}
+  - magicR: {fileID: 1137242409212892, guid: 2246fe5265bb6bf419b21dd3b1e2d473, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

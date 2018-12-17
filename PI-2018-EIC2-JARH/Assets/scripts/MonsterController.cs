@@ -12,6 +12,7 @@ public class MonsterController : MonoBehaviour {
     public String typeOfScenario;
     GenerateRandoms.Cenarios cenario;
 
+  
 
     // Use this for initialization
     void Start () {
@@ -145,6 +146,10 @@ public class MonsterController : MonoBehaviour {
         }
 
     }
+
+   
+   
+
     double cosine(double xMin, double xMax)
     {
         double a = 0.5 * (xMin + xMax); // location parameter
