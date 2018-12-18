@@ -5,8 +5,6 @@ using UnityEngine;
 using MathNet.Numerics.Distributions;
 
 public class GenerateRandoms : MonoBehaviour {
-
-
     public enum Cenarios
     {
         Deserto = 1,
@@ -44,10 +42,4 @@ public class GenerateRandoms : MonoBehaviour {
             tille.GetComponent<SpriteRenderer>().sprite = floresta;
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
-    }
-
-
 }

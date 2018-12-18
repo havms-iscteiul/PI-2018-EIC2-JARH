@@ -9,21 +9,16 @@ public class ItemGenerator : MonoBehaviour {
     public GameObject item;
     double timeToNextItem;
 
-
-
-
     // Use this for initialization
     void Start () {
         item.SetActive(false);
-        timeToNextItem = cosine(7, 11);
-
-        //Instantiate(item, transform.position, transform.rotation);
+        timeToNextItem = cosine(30, 45);
     }
 	
 	// Update is called once per frame
 	void Update () {
         timeToNextItem -= Time.deltaTime;
-        if (timeToNextItem < 0)
+        if (timeToNextItem < 0 && !item.active)
         {
             timeToNextItem= cosine(7, 11);
             double[] probs = new double[4];
@@ -39,25 +34,16 @@ public class ItemGenerator : MonoBehaviour {
             item.transform.position=new Vector3(cam.transform.position.x+4, transform.position.y, transform.position.z);
     
             if (typeOfItem == 0)
-            {
                 item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/potion");
-              
-            }
-            if (typeOfItem == 1)
-            {
-               
+            else if (typeOfItem == 1)
                 item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/pill");
-            }
-            if (typeOfItem == 2)
-            {
+            else if (typeOfItem == 2)
                 item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/medicine");
-            }
-            if (typeOfItem == 3)
-            {
+            else if (typeOfItem == 3)
                 item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/backpack");
-            }
         }
     }
+
     double cosine(double xMin, double xMax)
     {
         double a = 0.5 * (xMin + xMax); // location parameter

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MagicScript : MonoBehaviour
 {
-    public float speedX = 0.5f;
+    public float speedX = 5f;
     public float speedY = 0f;
     public Rigidbody2D rb;
 
@@ -18,14 +18,13 @@ public class MagicScript : MonoBehaviour
     void Update()
     {
         rb.velocity = new Vector2(speedX, speedY);
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 0.5f);
     }
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
-    
-        if (collision.collider.tag == "monster")
+        if (collision.collider.tag == "Item")
         {
-            collision.gameObject.SetActive(false);
             Destroy(gameObject);
         }
     }
