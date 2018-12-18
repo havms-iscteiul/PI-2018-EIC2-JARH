@@ -12,13 +12,13 @@ public class ItemGenerator : MonoBehaviour {
     // Use this for initialization
     void Start () {
         item.SetActive(false);
-        timeToNextItem = cosine(7, 11);
+        timeToNextItem = cosine(30, 45);
     }
 	
 	// Update is called once per frame
 	void Update () {
         timeToNextItem -= Time.deltaTime;
-        if (timeToNextItem < 0 && !item.activeInHierarchy)
+        if (timeToNextItem < 0 && !item.active)
         {
             timeToNextItem= cosine(7, 11);
             double[] probs = new double[4];

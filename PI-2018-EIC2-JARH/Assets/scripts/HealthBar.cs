@@ -14,7 +14,8 @@ public class HealthBar : MonoBehaviour {
 	private void Start () {
         helthbar = transform.Find("Health");
         healthText = (TextMesh)transform.Find("Text").GetComponent(typeof(TextMesh));
-        SetLife(life);
+        if(this.gameObject.active)
+            SetLife(life);
     }
 	
 	public void SetLife(int life)

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MonsterController : MonoBehaviour {
-    public HealthBar healthbar;
     public GameObject monster;
     double timeToNextMonster;
     //default
@@ -15,9 +14,7 @@ public class MonsterController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         monster.SetActive(false);
-        healthbar = Instantiate(healthbar, transform.position, transform.rotation);
-        healthbar.gameObject.SetActive(false);
-        timeToNextMonster = cosine(7, 11);
+        timeToNextMonster = cosine(5, 10);
         cenario = GenerateRandoms.cenarioSelecionado;
     }
 
@@ -37,12 +34,13 @@ public class MonsterController : MonoBehaviour {
             typeOfMonster = Categorical.Sample(probs);
 
             monster.SetActive(true);
-            healthbar.gameObject.SetActive(true);
             monster.transform.position = new Vector3(Camera.main.transform.position.x + 5, transform.position.y, transform.position.z);
-            healthbar.transform.position = new Vector3(Camera.main.transform.position.x + 5, (transform.position.y + 0.5f), transform.position.z);
-            healthbar.SetLife(healthbar.getMaxLife());
-
             monster.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("inimigos/" + cenario.ToString() + "/monstro" + typeOfMonster);
+        }else if (monster.active)
+        {
+            Vector3 newPosition = monster.transform.position;
+            newPosition.x -= 0.025f;
+            monster.transform.position = newPosition;
         }
     }
 

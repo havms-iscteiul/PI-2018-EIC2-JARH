@@ -14,7 +14,7 @@ public class Score_Time : MonoBehaviour {
     private int highscore;
     private float recordTime;
     
-    public bool check = false;
+    //public bool check = false;
     public bool check1 = false;
 
     // Use this for initialization
@@ -25,12 +25,11 @@ public class Score_Time : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (check == false)
-        {
-            StartCoroutine(Score_delay());
+        //if (check == false)
+        //{
+        //    StartCoroutine(Score_delay());
             scoret.text = "Score:" + score;
-
-        }
+        //}
         if (check1 == false)
         {
             StartCoroutine(Time_delay());
@@ -42,13 +41,12 @@ public class Score_Time : MonoBehaviour {
         }
     }
 
-    IEnumerator Score_delay()
-    {
-        check = true;
-        score = score + 1;
-        yield return new WaitForSeconds(0.5F);
-        check = false;
-    }
+    //IEnumerator Score_delay()
+    //{
+    //    check = true;
+    //    yield return new WaitForSeconds(0.5F);
+    //    check = false;
+    //}
 
     IEnumerator Time_delay()
     {
@@ -56,6 +54,11 @@ public class Score_Time : MonoBehaviour {
         time = time + 1;
         yield return new WaitForSeconds(1F);
         check1 = false;
+    }
+
+    public void addScore(int points)
+    {
+        this.score = score + points;
     }
 
     public void updateHighscores()

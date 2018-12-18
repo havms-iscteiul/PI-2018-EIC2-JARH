@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour {
     public HealthBar healthbar;
     private const float Speed = 0.05f;
     private Animator anim;
-    public Score_Time score_time;
 
     public GameObject magicL;
     public GameObject magicR;
@@ -40,7 +39,7 @@ public class PlayerController : MonoBehaviour {
         if (healthbar.getLife() == 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            score_time.updateHighscores();
+            //score_time.updateHighscores();
         }
         Vector3 newPosition = transform.position;
         /*if (Input.GetKey(KeyCode.LeftArrow))
@@ -95,7 +94,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.collider.tag == "Item")
         {
@@ -121,19 +120,17 @@ public class PlayerController : MonoBehaviour {
         {
             int newLife = healthbar.getLife();
 
-            collision.gameObject.SetActive(false);
-
             string spriteName = collision.gameObject.GetComponent<SpriteRenderer>().sprite.ToString();
             Debug.Log(collision.gameObject.GetComponent<SpriteRenderer>().sprite.ToString());
 
-            if (spriteName.Contains("enemy0"))
-                newLife -= 10;
-            else if (spriteName.Contains("enemy1"))
-                newLife -= 15;
-            else if (spriteName.Contains("enemy2"))
-                newLife -= 20;
-            else if (spriteName.Contains("enemy3"))
-                newLife -= 30;
+            if (spriteName.Contains("monstro0"))
+                newLife -= 1;
+            else if (spriteName.Contains("monstro1"))
+                newLife -= 2;
+            else if (spriteName.Contains("monstro2"))
+                newLife -= 3;
+            else if (spriteName.Contains("monstro3"))
+                newLife -= 4;
             
             healthbar.SetLife(newLife);
         }
