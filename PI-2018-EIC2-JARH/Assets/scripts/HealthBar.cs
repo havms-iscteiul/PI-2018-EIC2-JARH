@@ -14,15 +14,19 @@ public class HealthBar : MonoBehaviour {
 	private void Start () {
         helthbar = transform.Find("Health");
         healthText = (TextMesh)transform.Find("Text").GetComponent(typeof(TextMesh));
-        SetSize(life ,maxLife);
+        SetLife(life);
     }
 	
-	public void SetSize(int life, int maxLife)
+	public void SetLife(int life)
     {
+        if (life > maxLife)
+            life = maxLife;
+        else if (life < 0)
+            life = 0;
+
         helthbar.localScale = new Vector3(((float)life / (float)maxLife), 1f);
         healthText.text = maxLife + "/" + life;
         this.life = life;
-        this.maxLife = maxLife;
     }
 
     public int getLife()
@@ -33,5 +37,10 @@ public class HealthBar : MonoBehaviour {
     public int getMaxLife()
     {
         return maxLife;
+    }
+
+    public void setMaxLife(int maxLife)
+    {
+        this.maxLife = maxLife;
     }
 }

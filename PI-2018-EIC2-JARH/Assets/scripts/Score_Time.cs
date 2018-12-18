@@ -8,14 +8,12 @@ public class Score_Time : MonoBehaviour {
 
     int score = 0;
     public float time = 0.0f;
-   
 
     public TextMeshProUGUI scoret;
     public TextMeshProUGUI Timet;
     private int highscore;
     private float recordTime;
     
-
     public bool check = false;
     public bool check1 = false;
 
@@ -43,7 +41,6 @@ public class Score_Time : MonoBehaviour {
 
         }
     }
-
 
     IEnumerator Score_delay()
     {

@@ -1,112 +1,148 @@
 ﻿using MathNet.Numerics.Distributions;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
-    public GameObject player;
-    public GameObject monster;
-    public GameObject background;
+    public HealthBar healthbar;
+    private const float Speed = 0.05f;
+    private Animator anim;
+    public Score_Time score_time;
 
+    public GameObject magicL;
+    public GameObject magicR;
+    public Vector2 magicPos;
+    public float magicRate = 0.5f;
+    public float nextMagic = 0.0f;
 
-
-    private const float Speed = 0.01f;
-    private static int layer = 1;
-
-    [SerializeField] private HealthBar healthBar;
-
-    public Animator anim;
-
-    private const int maxLife = 100;
-    public int Life
-    {
-        get
-        {
-            return life;
-        }
-        set
-        {
-            if (value >= 0 && value <= 100)
-            {
-                life = value;
-                healthBar.SetSize(life, maxLife);
-            }
-        }
-    }
-    private int life; 
+    private const double timeLoseLife = 5;
+    private double loseLife = timeLoseLife;
 
     // Use this for initialization
-    private void Start () {
-        player = Instantiate(player, new Vector3(0, 1, layer), player.transform.rotation); //instanciar o player
-        player.transform.localScale = new Vector3(0.5f, 0.5f, 1); //nao sei bem o que faz, cenas do hugo
-        Camera.main.orthographicSize = 1; //para ter a camara centrada
-        
-        anim= player.GetComponent<Animator>();
+    void Start () {
+        Camera.main.orthographicSize = 2; //para ter a camara centrada
 
-        //cenas da vida ;)
-        Life = maxLife;
-
+        anim = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
-	void Update () {
-        Vector3 newPosition = player.transform.position;
-        if (Input.GetKey(KeyCode.LeftArrow))
+	void Update ()
+    {
+        loseLife -= Time.deltaTime;
+        if (loseLife <= 0)
+        {
+            int newLife = healthbar.getLife() - (int)logarithmic(1, 5);
+            healthbar.SetLife(newLife);
+            loseLife = timeLoseLife;
+        }
+
+        if (healthbar.getLife() == 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            score_time.updateHighscores();
+        }
+        Vector3 newPosition = transform.position;
+        /*if (Input.GetKey(KeyCode.LeftArrow))
         {
             newPosition.x -= Speed;
             anim.Play("move");
-            player.GetComponent<SpriteRenderer>().flipX = false;
+            GetComponent<SpriteRenderer>().flipX = false;
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else*/
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             newPosition.x += Speed;
             anim.Play("move");
-            player.GetComponent<SpriteRenderer>().flipX = true;
+            GetComponent<SpriteRenderer>().flipX = true;
         }
-        else if (Input.GetKey("x"))
+        else if (Input.GetKey(KeyCode.X) && Time.time > nextMagic)
         {
+            nextMagic = Time.time + magicRate;
             atack();
             anim.Play("atack");
-            Life += 1;
         }
-        else if (Input.GetKey("z"))
-        {
-            Life -= 1;
-           // anim.Play("jump");
-            
-        }
-        
-        player.transform.position = newPosition;
+        //else if (Input.GetKey(KeyCode.Space))
+        //{
+        //    anim.Play("jump");
+        //}
+
+        transform.position = newPosition;
         Vector3 newCameraPosition = Camera.main.transform.position;
         newCameraPosition.x = newPosition.x;
         newCameraPosition.y = newPosition.y;
         Camera.main.transform.position = newCameraPosition;
-        
+
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height, 1));
-        Vector3 newHealthBarPosition = healthBar.transform.position;
-        newHealthBarPosition.x = worldPos.x + healthBar.transform.localScale.x + 0.1f;
-        newHealthBarPosition.y = worldPos.y - healthBar.transform.localScale.y + 0.1f;
-        healthBar.transform.position = newHealthBarPosition;
-
-        //generate monstro
-       
-
+        Vector3 newHealthBarPosition = healthbar.transform.position;
+        newHealthBarPosition.x = worldPos.x + healthbar.transform.localScale.x + 0.1f;
+        newHealthBarPosition.y = worldPos.y - healthbar.transform.localScale.y + 0.1f;
+        healthbar.transform.position = newHealthBarPosition;
     }
-
-
 
     public void atack()
     {
-        //bicho vai atacar
+        magicPos = transform.position;
+        if (GetComponent<SpriteRenderer>().flipX)
+        {
+            magicPos += new Vector2(+0.45f, -0.2f);
+            Instantiate(magicR, magicPos, Quaternion.identity);
+        }
+        else
+        {
+            magicPos += new Vector2(-0.45f, -0.2f);
+            Instantiate(magicL, magicPos, Quaternion.identity);
+        }
     }
 
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Item")
+        {
+            int newLife = healthbar.getLife();
 
-    //  player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
-    double cosine(double xMin, double xMax)
+            collision.gameObject.SetActive(false);
+
+            string spriteName = collision.gameObject.GetComponent<SpriteRenderer>().sprite.ToString();
+            Debug.Log(collision.gameObject.GetComponent<SpriteRenderer>().sprite.ToString());
+
+            if (spriteName.Contains("potion"))  
+                newLife += 10;
+            else if (spriteName.Contains("pill"))
+                newLife += 15;
+            else if (spriteName.Contains("medicine"))
+                newLife += 20;
+            else if (spriteName.Contains("backpack"))
+                newLife += 30;
+
+            healthbar.SetLife(newLife);
+        }
+        else if (collision.collider.tag == "monster")
+        {
+            int newLife = healthbar.getLife();
+
+            collision.gameObject.SetActive(false);
+
+            string spriteName = collision.gameObject.GetComponent<SpriteRenderer>().sprite.ToString();
+            Debug.Log(collision.gameObject.GetComponent<SpriteRenderer>().sprite.ToString());
+
+            if (spriteName.Contains("enemy0"))
+                newLife -= 10;
+            else if (spriteName.Contains("enemy1"))
+                newLife -= 15;
+            else if (spriteName.Contains("enemy2"))
+                newLife -= 20;
+            else if (spriteName.Contains("enemy3"))
+                newLife -= 30;
+            
+            healthbar.SetLife(newLife);
+        }
+    }
+
+    private double logarithmic(double xMin, double xMax)
     {
         double a = 0.5 * (xMin + xMax); // location parameter
-        double b = (xMax - xMin) / Math.PI; // scale parameter
-        return a + b * Math.Asin(ContinuousUniform.Sample(-1, 1));
+        double b = xMax - xMin; // scale parameter 
+        return a + b * ContinuousUniform.Sample(0, 1) * ContinuousUniform.Sample(0, 1);
     }
 }

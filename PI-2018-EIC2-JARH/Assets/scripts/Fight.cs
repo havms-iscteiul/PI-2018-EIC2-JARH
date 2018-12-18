@@ -7,8 +7,8 @@ using MathNet.Numerics.Distributions;
 
 public class Fight : MonoBehaviour {
 
-    public PlayableObject player;
-    public PlayableObject enemy;
+    //public PlayableObject player;
+    //public PlayableObject enemy;
 
 	// Use this for initialization
 	void Start () {
