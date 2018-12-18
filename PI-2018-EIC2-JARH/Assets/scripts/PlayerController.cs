@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour {
             int newLife = healthbar.getLife();
 
             string spriteName = collision.gameObject.GetComponent<SpriteRenderer>().sprite.ToString();
-            Debug.Log(collision.gameObject.GetComponent<SpriteRenderer>().sprite.ToString());
+           
 
             if (spriteName.Contains("monstro0"))
                 newLife -= 1;

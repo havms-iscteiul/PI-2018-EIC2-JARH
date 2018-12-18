@@ -16,6 +16,7 @@ public class MonsterController : MonoBehaviour {
         monster.SetActive(false);
         timeToNextMonster = cosine(5, 10);
         cenario = GenerateRandoms.cenarioSelecionado;
+        
     }
 
     // Update is called once per frame
@@ -24,6 +25,7 @@ public class MonsterController : MonoBehaviour {
 
         if (timeToNextMonster < 0 && !monster.active)
         {
+            monster.GetComponent<Animator>().Play(cenario.ToString());
             timeToNextMonster = cosine(7, 11);
 
             double[] probs = new double[4];
@@ -35,8 +37,12 @@ public class MonsterController : MonoBehaviour {
 
             monster.SetActive(true);
             monster.transform.position = new Vector3(Camera.main.transform.position.x + 5, transform.position.y, transform.position.z);
-            monster.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("inimigos/" + cenario.ToString() + "/monstro" + typeOfMonster);
-        }else if (monster.active)
+            // monster.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("inimigos/" + cenario.ToString() + "/monstro" + typeOfMonster);
+     
+            monster.GetComponent<Animator>().Play(cenario.ToString()+typeOfMonster.ToString());
+            Debug.Log(cenario.ToString() + typeOfMonster.ToString());
+        }
+        else if (monster.active)
         {
             Vector3 newPosition = monster.transform.position;
             newPosition.x -= 0.025f;
