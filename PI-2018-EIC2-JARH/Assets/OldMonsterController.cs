@@ -1,4 +1,4 @@
-﻿using MathNet.Numerics.Distributions;
+﻿/*using MathNet.Numerics.Distributions;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -149,6 +149,6 @@ public class MonsterController : MonoBehaviour {
         return a + b * Math.Asin(ContinuousUniform.Sample(-1, 1));
     }
 
-}
+}*/
     
 
