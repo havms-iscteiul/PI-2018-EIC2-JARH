@@ -8,9 +8,11 @@ public class PlayerController : MonoBehaviour {
     public HealthBar healthbar;
     private const float Speed = 0.05f;
     private Animator anim;
+    public PlatformDestroier pd;
 
     public GameObject magicL;
     public GameObject magicR;
+    private float maxDistBack = 9.0f;
     public Vector2 magicPos;
     public float magicRate = 0.5f;
     public float nextMagic = 0.0f;
@@ -42,13 +44,18 @@ public class PlayerController : MonoBehaviour {
             //score_time.updateHighscores();
         }
         Vector3 newPosition = transform.position;
-        /*if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            newPosition.x -= Speed;
-            anim.Play("move");
-            GetComponent<SpriteRenderer>().flipX = false;
+           
+            maxDistBack -= Speed;
+            if (maxDistBack >0  && pd.getLeft()==true)
+            {
+                newPosition.x -= Speed;
+                anim.Play("move");
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
         }
-        else*/
+        else
         if (Input.GetKey(KeyCode.RightArrow))
         {
             newPosition.x += Speed;
