@@ -13,8 +13,7 @@ public class GenerateRandoms : MonoBehaviour {
         Noturno = 4
     }
 
-    public static Cenarios cenarioSelecionado = 
-        (Cenarios)System.Enum.GetValues(typeof(Cenarios)).GetValue(DiscreteUniform.Sample(0, 3));
+    public static Cenarios cenarioSelecionado;
 
     public GameObject bg;
     public GameObject tille;
@@ -25,7 +24,8 @@ public class GenerateRandoms : MonoBehaviour {
     
     // Use this for initialization
     void Start () {
-        if(cenarioSelecionado==Cenarios.Deserto){
+        cenarioSelecionado = (Cenarios)System.Enum.GetValues(typeof(Cenarios)).GetValue(DiscreteUniform.Sample(0, 3));
+        if (cenarioSelecionado==Cenarios.Deserto){
             bg.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Backgrounds/Deserto");
             tille.GetComponent<SpriteRenderer>().sprite = deserto;
         }
@@ -41,5 +41,10 @@ public class GenerateRandoms : MonoBehaviour {
             bg.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Backgrounds/Floresta");
             tille.GetComponent<SpriteRenderer>().sprite = floresta;
         }
+    }
+
+    public void regenerate()
+    {
+        cenarioSelecionado = (Cenarios)System.Enum.GetValues(typeof(Cenarios)).GetValue(DiscreteUniform.Sample(0, 3));
     }
 }

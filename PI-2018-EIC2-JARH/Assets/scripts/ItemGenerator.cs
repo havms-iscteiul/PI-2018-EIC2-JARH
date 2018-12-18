@@ -17,30 +17,33 @@ public class ItemGenerator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        timeToNextItem -= Time.deltaTime;
-        if (timeToNextItem < 0 && !item.active)
+        if (!item.active)
         {
-            timeToNextItem= cosine(7, 11);
-            double[] probs = new double[4];
-            probs[0] = 0.4;
-            probs[1] = 0.3;
-            probs[2] = 0.2;
-            probs[3] = 0.1;
-            int typeOfItem = Categorical.Sample(probs);
-            Camera cam = Camera.main;
-            float height = 2f * cam.orthographicSize;
-            float width = height * cam.aspect;
-            item.SetActive(true);
-            item.transform.position=new Vector3(cam.transform.position.x+4, transform.position.y, transform.position.z);
-    
-            if (typeOfItem == 0)
-                item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/potion");
-            else if (typeOfItem == 1)
-                item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/pill");
-            else if (typeOfItem == 2)
-                item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/medicine");
-            else if (typeOfItem == 3)
-                item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/backpack");
+            timeToNextItem -= Time.deltaTime;
+            if (timeToNextItem < 0)
+            {
+                timeToNextItem = cosine(30, 45);
+                double[] probs = new double[4];
+                probs[0] = 0.4;
+                probs[1] = 0.3;
+                probs[2] = 0.2;
+                probs[3] = 0.1;
+                int typeOfItem = Categorical.Sample(probs);
+                Camera cam = Camera.main;
+                float height = 2f * cam.orthographicSize;
+                float width = height * cam.aspect;
+                item.SetActive(true);
+                item.transform.position = new Vector3(cam.transform.position.x + 4, transform.position.y, transform.position.z);
+
+                if (typeOfItem == 0)
+                    item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/potion");
+                else if (typeOfItem == 1)
+                    item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/pill");
+                else if (typeOfItem == 2)
+                    item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/medicine");
+                else if (typeOfItem == 3)
+                    item.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Itens/backpack");
+            }
         }
     }
 
