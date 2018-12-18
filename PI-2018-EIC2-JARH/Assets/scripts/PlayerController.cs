@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     private const float Speed = 0.05f;
     private Animator anim;
     public PlatformDestroier pd;
+    public Score_Time score_time;
 
     public GameObject magicL;
     public GameObject magicR;
@@ -41,7 +42,7 @@ public class PlayerController : MonoBehaviour {
         if (healthbar.getLife() == 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            //score_time.updateHighscores();
+            score_time.updateHighscores();
         }
         Vector3 newPosition = transform.position;
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -101,6 +102,9 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    private const double enemyAttackTime = 2;
+    private double nextEnemyAttackTime = 0;
+
     public void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.collider.tag == "Item")
@@ -125,21 +129,26 @@ public class PlayerController : MonoBehaviour {
         }
         else if (collision.collider.tag == "monster")
         {
-            int newLife = healthbar.getLife();
+            nextEnemyAttackTime -= Time.deltaTime;
 
-            string spriteName = collision.gameObject.GetComponent<SpriteRenderer>().sprite.ToString();
-           
+            if (nextEnemyAttackTime < 0)
+            {
+                int newLife = healthbar.getLife();
 
-            if (spriteName.Contains("monstro0"))
-                newLife -= 1;
-            else if (spriteName.Contains("monstro1"))
-                newLife -= 2;
-            else if (spriteName.Contains("monstro2"))
-                newLife -= 3;
-            else if (spriteName.Contains("monstro3"))
-                newLife -= 4;
-            
-            healthbar.SetLife(newLife);
+                AnimatorStateInfo monsterName = collision.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
+
+                if (monsterName.IsName("Deserto0") || monsterName.IsName("Floresta0") || monsterName.IsName("Noturno0") || monsterName.IsName("Gelado0"))
+                    newLife -= 10;
+                else if (monsterName.IsName("Deserto1") || monsterName.IsName("Floresta1") || monsterName.IsName("Noturno1") || monsterName.IsName("Gelado1"))
+                    newLife -= 20;
+                else if (monsterName.IsName("Deserto2") || monsterName.IsName("Floresta2") || monsterName.IsName("Noturno2") || monsterName.IsName("Gelado2"))
+                    newLife -= 30;
+                else if (monsterName.IsName("Deserto3") || monsterName.IsName("Floresta3") || monsterName.IsName("Noturno3") || monsterName.IsName("Gelado3"))
+                    newLife -= 40;
+
+                healthbar.SetLife(newLife);
+                nextEnemyAttackTime = enemyAttackTime;
+            }
         }
     }
 

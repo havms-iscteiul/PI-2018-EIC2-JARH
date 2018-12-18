@@ -25,28 +25,15 @@ public class Score_Time : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //if (check == false)
-        //{
-        //    StartCoroutine(Score_delay());
-            scoret.text = "Score:" + score;
-        //}
+        scoret.text = "Score:" + score;
         if (check1 == false)
         {
             StartCoroutine(Time_delay());
             int min = Mathf.FloorToInt(time / 60);
             int sec = Mathf.FloorToInt(time % 60);
             Timet.text = "Time:" + min.ToString("00") + ":" + sec.ToString("00");
-            //Timet.text = "Time:" + time;
-
         }
     }
-
-    //IEnumerator Score_delay()
-    //{
-    //    check = true;
-    //    yield return new WaitForSeconds(0.5F);
-    //    check = false;
-    //}
 
     IEnumerator Time_delay()
     {
@@ -63,7 +50,7 @@ public class Score_Time : MonoBehaviour {
 
     public void updateHighscores()
     {
-        if(time >recordTime)
+        if(time > recordTime && score > highscore)
         {
             recordTime = time;
             highscore = score;
