@@ -26,14 +26,12 @@ public class PlayerController : MonoBehaviour {
     void Start () {
         Camera.main.orthographicSize = 2; //para ter a camara centrada
         maxDistBack = -1 +GameObject.Find("PlatformDestructionPoint").transform.position.x*-1;
-        Debug.Log(maxDistBack);
         anim = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.Log("update:" +dist);
         loseLife -= Time.deltaTime;
         if (loseLife <= 0)
         {
