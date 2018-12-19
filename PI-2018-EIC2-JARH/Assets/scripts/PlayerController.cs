@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
     public HealthBar healthbar;
     private const float Speed = 0.05f;
     private Animator anim;
@@ -13,8 +14,6 @@ public class PlayerController : MonoBehaviour {
 
     public GameObject magicL;
     public GameObject magicR;
-    private float maxDistBack = 9.0f;
-    private float dist = 9.0f;
     public Vector2 magicPos;
     public float magicRate = 0.5f;
     public float nextMagic = 0.0f;
@@ -23,14 +22,14 @@ public class PlayerController : MonoBehaviour {
     private double loseLife = timeLoseLife;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         Camera.main.orthographicSize = 2; //para ter a camara centrada
-        maxDistBack = -1 +GameObject.Find("PlatformDestructionPoint").transform.position.x*-1;
         anim = GetComponent<Animator>();
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
         loseLife -= Time.deltaTime;
         if (loseLife <= 0)
@@ -40,7 +39,7 @@ public class PlayerController : MonoBehaviour {
             loseLife = timeLoseLife;
         }
 
-        if (healthbar.getLife() == 0)
+        if (healthbar.getLife() == 0 || transform.position.y < 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             score_time.updateHighscores();
@@ -48,21 +47,12 @@ public class PlayerController : MonoBehaviour {
         Vector3 newPosition = transform.position;
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            dist -= Speed;
-            if (dist >0  && pd.getLeft()==true)
-            {
-                newPosition.x -= Speed;
-                anim.Play("move");
-                GetComponent<SpriteRenderer>().flipX = false;
-            }
+            newPosition.x -= Speed;
+            anim.Play("move");
+            GetComponent<SpriteRenderer>().flipX = false;
         }
-        else
-        if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
-            if (pd.getLeft() == true && dist<maxDistBack)
-            {
-                dist += Speed;
-            }
             newPosition.x += Speed;
             anim.Play("move");
             GetComponent<SpriteRenderer>().flipX = true;
@@ -73,10 +63,6 @@ public class PlayerController : MonoBehaviour {
             atack();
             anim.Play("atack");
         }
-        //else if (Input.GetKey(KeyCode.Space))
-        //{
-        //    anim.Play("jump");
-        //}
 
         transform.position = newPosition;
         Vector3 newCameraPosition = Camera.main.transform.position;
@@ -120,7 +106,7 @@ public class PlayerController : MonoBehaviour {
             string spriteName = collision.gameObject.GetComponent<SpriteRenderer>().sprite.ToString();
             Debug.Log(collision.gameObject.GetComponent<SpriteRenderer>().sprite.ToString());
 
-            if (spriteName.Contains("potion"))  
+            if (spriteName.Contains("potion"))
                 newLife += 10;
             else if (spriteName.Contains("pill"))
                 newLife += 15;

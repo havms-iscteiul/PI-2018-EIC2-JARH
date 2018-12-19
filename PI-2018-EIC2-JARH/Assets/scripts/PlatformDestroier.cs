@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlatformDestroier : MonoBehaviour {
-
-
+    
     public GameObject platformDestroctionPoint;
-    private bool playerLeft = false;
 
 	// Use this for initialization
 	void Start () {
@@ -17,19 +15,7 @@ public class PlatformDestroier : MonoBehaviour {
 	void Update () {
 		if(transform.position.x < platformDestroctionPoint.transform.position.x)
         {
-            if (playerLeft == false)
-            {
-               
-                playerLeft = true;
-            }
             Destroy(gameObject);
         }
 	}
-
-    public bool getLeft()
-    {
-        return playerLeft;
-    }
-
- 
 }
