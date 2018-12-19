@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject magicL;
     public GameObject magicR;
     private float maxDistBack = 9.0f;
+    private float dist = 9.0f;
     public Vector2 magicPos;
     public float magicRate = 0.5f;
     public float nextMagic = 0.0f;
@@ -24,13 +25,15 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         Camera.main.orthographicSize = 2; //para ter a camara centrada
-
+        maxDistBack = -1 +GameObject.Find("PlatformDestructionPoint").transform.position.x*-1;
+        Debug.Log(maxDistBack);
         anim = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+        Debug.Log("update:" +dist);
         loseLife -= Time.deltaTime;
         if (loseLife <= 0)
         {
@@ -47,9 +50,8 @@ public class PlayerController : MonoBehaviour {
         Vector3 newPosition = transform.position;
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-           
-            maxDistBack -= Speed;
-            if (maxDistBack >0  && pd.getLeft()==true)
+            dist -= Speed;
+            if (dist >0  && pd.getLeft()==true)
             {
                 newPosition.x -= Speed;
                 anim.Play("move");
@@ -59,6 +61,10 @@ public class PlayerController : MonoBehaviour {
         else
         if (Input.GetKey(KeyCode.RightArrow))
         {
+            if (pd.getLeft() == true && dist<maxDistBack)
+            {
+                dist += Speed;
+            }
             newPosition.x += Speed;
             anim.Play("move");
             GetComponent<SpriteRenderer>().flipX = true;

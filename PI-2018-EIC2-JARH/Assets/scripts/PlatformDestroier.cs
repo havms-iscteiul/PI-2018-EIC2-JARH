@@ -6,13 +6,12 @@ public class PlatformDestroier : MonoBehaviour {
 
 
     public GameObject platformDestroctionPoint;
-    private float maxDist;
     private bool playerLeft = false;
 
 	// Use this for initialization
 	void Start () {
         platformDestroctionPoint = GameObject.Find("PlatformDestructionPoint");
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -20,7 +19,7 @@ public class PlatformDestroier : MonoBehaviour {
         {
             if (playerLeft == false)
             {
-                maxDist = platformDestroctionPoint.transform.position.x;
+               
                 playerLeft = true;
             }
             Destroy(gameObject);
@@ -32,8 +31,5 @@ public class PlatformDestroier : MonoBehaviour {
         return playerLeft;
     }
 
-    public float getMax()
-    {
-        return maxDist;
-    }
+ 
 }
