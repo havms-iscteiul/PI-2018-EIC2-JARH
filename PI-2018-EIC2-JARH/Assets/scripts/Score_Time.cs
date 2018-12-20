@@ -13,6 +13,7 @@ public class Score_Time : MonoBehaviour {
     public TextMeshProUGUI Timet;
     private int highscore;
     private float recordTime;
+
     
     //public bool check = false;
     public bool check1 = false;

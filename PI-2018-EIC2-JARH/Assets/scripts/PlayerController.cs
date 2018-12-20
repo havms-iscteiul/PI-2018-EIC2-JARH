@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     public PlatformDestroier pd;
     public Score_Time score_time;
+    public GameObject time;
+    public GameObject score;
+    
 
     public GameObject magicL;
     public GameObject magicR;
@@ -31,6 +34,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         loseLife -= Time.deltaTime;
         if (loseLife <= 0)
         {
@@ -75,6 +79,15 @@ public class PlayerController : MonoBehaviour
         newHealthBarPosition.x = worldPos.x + healthbar.transform.localScale.x + 0.1f;
         newHealthBarPosition.y = worldPos.y - healthbar.transform.localScale.y + 0.1f;
         healthbar.transform.position = newHealthBarPosition;
+        Vector3 newScorePosition = score.transform.position;
+        newScorePosition.x = worldPos.x + score.transform.localScale.x + 0.1f+ 1.0f;
+        newScorePosition.y = worldPos.y - score.transform.localScale.y + 0.1f + 0.4f;
+        score.transform.position = newScorePosition;
+        Vector3 newTimePosition = time.transform.position;
+        newTimePosition.x = worldPos.x + time.transform.localScale.x + 0.1f+ 3.0f;
+       newTimePosition.y = worldPos.y - time.transform.localScale.y + 0.1f + 0.4f;
+        time.transform.position = newTimePosition;
+     
     }
 
     public void atack()
@@ -104,7 +117,6 @@ public class PlayerController : MonoBehaviour
             collision.gameObject.SetActive(false);
 
             string spriteName = collision.gameObject.GetComponent<SpriteRenderer>().sprite.ToString();
-            Debug.Log(collision.gameObject.GetComponent<SpriteRenderer>().sprite.ToString());
 
             if (spriteName.Contains("potion"))
                 newLife += 10;

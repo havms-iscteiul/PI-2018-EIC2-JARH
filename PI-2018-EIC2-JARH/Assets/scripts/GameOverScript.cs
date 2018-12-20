@@ -29,7 +29,8 @@ public class GameOverScript : MonoBehaviour {
 
     public void QuitGame()
     {
-        Debug.Log("Quit!!!");
-        Application.Quit();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
+
+ 
 }
