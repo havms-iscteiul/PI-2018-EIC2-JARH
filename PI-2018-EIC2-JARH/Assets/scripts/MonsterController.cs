@@ -14,7 +14,7 @@ public class MonsterController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         monster.SetActive(false);
-        timeToNextMonster = cosine(5, 10);
+        timeToNextMonster = cosine(4, 8);
       //  cenario = GenerateRandoms.cenarioSelecionado;
         
     }
@@ -27,7 +27,7 @@ public class MonsterController : MonoBehaviour {
         {
             cenario = GenerateRandoms.cenarioSelecionado;
             //monster.GetComponent<Animator>().Play(cenario.ToString());
-            timeToNextMonster = cosine(7, 11);
+            timeToNextMonster = cosine(4, 8);
 
             double[] probs = new double[4];
             probs[0] = 0.4;
