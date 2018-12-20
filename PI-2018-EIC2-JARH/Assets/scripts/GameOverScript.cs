@@ -29,6 +29,7 @@ public class GameOverScript : MonoBehaviour {
 
     public void QuitGame()
     {
+        Destroy(GameObject.Find("Music"));
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
 

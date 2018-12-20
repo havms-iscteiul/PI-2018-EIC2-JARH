@@ -14,7 +14,6 @@ public class MusicScript : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
         // Assign Audio Source component to control it
         audioSrc = GetComponent<AudioSource>();
     }
@@ -22,7 +21,6 @@ public class MusicScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
         // Setting volume option of Audio Source to be equal to musicVolume
         audioSrc.volume = musicVolume;
     }
@@ -34,6 +32,7 @@ public class MusicScript : MonoBehaviour {
     {
         musicVolume = vol;
     }
+
     void Awake()
     {
         DontDestroyOnLoad(transform.gameObject);
